@@ -144,6 +144,15 @@ class DataView:
       #print self.data['pre']['roles'][balance_sheet_role]['tree']['StatementOfFinancialPositionAbstract']['sub'].keys()
       return self.data['pre']['roles'][balance_sheet_role]['tree']['StatementOfFinancialPositionAbstract']['sub']
 
+  def get_income_statement(self):
+      income_statement_role = self.find_fact_in_role('IncomeStatementAbstract')[0]
+      print income_statement_role
+      return self.data['pre']['roles'][income_statement_role]['tree']['IncomeStatementAbstract']['sub']
+
+  def get_income_statement_value(self, key):
+      income_statement_node = self.get_income_statement()
+      return self.search_for_key(key, income_statement_node)
+
   def get_balance_sheet_value(self,key):
       #search key under sub until desired key is found
       financial_pos_node = self.get_financial_position()
