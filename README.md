@@ -13,7 +13,8 @@ the necessary parameters (ticker_symbol, filing_date, filing_type). The data wil
 [instance name].data, and it is an OrderedDict.
 
 # Docker Support
-To avoid installing conflicting pip modules on your host machine, you can use Docker to run your scrape and extract.
+To avoid installing conflicting pip modules on your host machine, you can use Docker to run your scrape and extract.<br>
+
 Build Docker image:
 ```
 docker build -t scraxbrl .
