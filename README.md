@@ -11,3 +11,14 @@ To use:<br>
 Data is stored in a pickle file. To use DataViewer, create instance of DataView class and enter<br>
 the necessary parameters (ticker_symbol, filing_date, filing_type). The data will then be stored in<br>
 [instance name].data, and it is an OrderedDict.
+
+# Docker Support
+To avoid installing conflicting pip modules on your host machine, you can use Docker to run your scrape and extract.
+Build Docker image:
+```
+docker build -t scraxbrl .
+```
+Run docker:
+```
+docker run -v scraxbrl-data:/app/data/ -it scraxbrl bash
+```
